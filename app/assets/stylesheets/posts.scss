@@ -15,8 +15,42 @@
 }
 
 .aboutImg {
-	width: 80%;
-	margin: auto;
+	width: 50%;
+}
+
+.aboutContainer {
+	width: 100%;
+}
+
+.floatedAbout {
+	float: right;
+	width: 45%;
+}
+
+.socialMedia {
+	text-align: center;
+}
+
+.instaLink a:link {
+	font-family: "courier new";
+	text-decoration: none;
+	color: black;
+	letter-spacing: .1em;
+	font-weight: bold;
+	font-variant: small-caps;
+	font-size: 1.2em;
+}
+
+.instaLink:hover {
+	color: pink;
+}
+
+.instaLink a:visited {
+	color: pink;
+}
+
+.italic {
+	font-style: italic;
 }
 
 
@@ -37,13 +71,13 @@
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 10% auto; /* 10% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60%;
+    overflow-y: auto;
 }
 
-/* The Close Button */
 .close {
     color: #aaa;
     float: right;

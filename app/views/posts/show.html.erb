@@ -1,0 +1,21 @@
+<div class='post'>
+	<div class='titleTxt'>
+		<%= @post.title %>
+	</div>
+	<div class='dateTxt'>
+		<%= @post.date %>
+	</div>
+	<div class='bodyTxt'>
+		<%= raw @post.body %>
+	</div>
+	<div class='authorTxt'>
+	<%= @post.user %>
+	</div>
+</div>
+
+
+<% if current_user!= nil && ( current_user.username == 'sierramclawhorn' || current_user.username == 'kianaseymour' ) %>
+	<%= link_to 'Edit', edit_post_path %> 
+  	|
+	<%= link_to 'Delete', post_path, method: :delete, data: { confirm: "DON'T DO IT!! STAHP! WHATAREYOUDOING!? dun dew et, beef" } %>
+<% end %>

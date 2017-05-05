@@ -1,0 +1,22 @@
+<% if current_user!= nil && ( current_user.username == 'sierramclawhorn' || current_user.username == 'kianaseymour' ) %>
+	<%= link_to 'New Post', new_post_path %>
+  <br><br>
+<% end %>
+
+<div class='posts columns'>
+	<% @posts.reverse_each do |post| %>
+		<div class='titleTxt'>
+			<%= link_to post.title, post_path(post.id) %>
+		</div>
+		<div class='dateTxt'>
+			<%= post.date %>
+		</div>
+		<div class='bodyTxt'>
+			<%= raw post.body %>
+		</div>
+		<div class='authorTxt'>
+			<%= @current_user.username %>
+		</div>
+		<br><br>
+	<% end %>
+</div>

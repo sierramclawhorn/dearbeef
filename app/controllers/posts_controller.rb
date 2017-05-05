@@ -5,23 +5,20 @@ class PostsController < ApplicationController
   end
 
   def show
-  	find_user
-    @post = @user.posts.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def new
-    find_user
     @post = Post.new
   end
 
   def edit
-  	find_user
-    @post = @user.posts.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def create
-    find_user
-    @post = @user.posts.new(post_params)
+    @user = current_user
+    @post = @user.posts.create(post_params)
     if @post.save 
       redirect_to posts_path
     else
@@ -30,8 +27,7 @@ class PostsController < ApplicationController
   end
 
   def update
-  	find_user
-    @post = @user.posts.find(params[:id])
+    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to post_path(@post.id)
     else
@@ -40,18 +36,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-  	find_user
-    @post = @user.posts.find(params[:id]).destroy
-    if @post.destroy
-      redirect_to posts_path
-    end
+    @post = Post.find(params[:id]).destroy
+    redirect_to posts_path
   end
 
   private
-
-    def find_user
-      @user = User.find(params[:user_id])
-    end
 
     def post_params
       params.require(:post).permit(:date, 

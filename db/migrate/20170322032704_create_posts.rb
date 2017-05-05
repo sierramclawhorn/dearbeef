@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :date
       t.string :title
       t.text :body
-      t.belongs_to :user
+      t.integer :user_id
       
       t.timestamps
     end

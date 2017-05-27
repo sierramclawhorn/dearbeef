@@ -126,7 +126,8 @@ body {
 }
 
 .posts {
-	width: 90%;
+	width: 96%;
+	margin: auto;
 }
 
 .titleTxt {
@@ -171,4 +172,15 @@ img {
 }
 
 
+//post columns 
+.posts .left {
+	float: left;
+	width: 46%;
+	margin-right: 4%;
+}
 
+.posts .right {
+	float: right;
+	width: 46%;
+	margin-left: 4%;
+}

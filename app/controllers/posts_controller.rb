@@ -2,6 +2,8 @@ class PostsController < ApplicationController
 
  	def index
     @posts = Post.all
+    @sierras = User.find_by_username('sierramclawhorn').posts
+    @kianas = User.find_by_username('kianaseymour').posts
   end
 
   def show
